@@ -1,0 +1,13 @@
+CREATE TABLE textTable
+(
+    id SERIAL PRIMARY KEY,
+    parent_id INTEGER ,
+    name VARCHAR(128) ,
+	operation VARCHAR(128)
+    
+);
+
+alter table textTable
+	add constraint set_parent_key
+	foreign key (parent_id)
+	references textTable (id);
